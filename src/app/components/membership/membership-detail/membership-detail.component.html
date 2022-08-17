@@ -1,0 +1,93 @@
+<app-main-header></app-main-header>
+<div class="container">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-1 mb-1 bo border-bottom"
+  >
+    <h2>Editar Membresia</h2>
+  </div>
+
+  <form [formGroup]="updateMembershipForm" (ngSubmit)="onUpdate()">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Precio</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="price"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Impuesto de registro</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="register_tax"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Beneficio diario</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="daily_profit"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Tiempo máximo</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="max_time"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Pago máximo</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="max_payment"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Costo de pago</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="payment_cost"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <label class="col-12"></label>
+    <div class="form-group d-flex justify-content-center">
+      <button
+        type="button"
+        class="btn btn-danger col-md-4"
+        (click)="onCancel()"
+      >
+        Cancelar
+      </button>
+      <button
+        type="button"
+        class="btn btn-success col-md-4 offset-md-2"
+        type="submit"
+      >
+        Actualizar Membresia
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,46 @@
+<app-main-header></app-main-header>
+<div class="container">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-1 mb-1 bo border-bottom"
+  >
+    <h2>Listado de Pagos</h2>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Cuenta ID</th>
+          <th scope="col">Fecha de pago</th>
+          <th scope="col">Monto</th>
+          <th class="text-center" scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let membership of Payments; let i = index">
+          <td>{{ membership.PAYMENT_ID }}</td>
+          <td>{{ membership.ACCOUNT_ID }}</td>
+          <td>{{ membership.PAYMENT_DATE }}</td>
+          <td>{{ membership.AMMOUNT }}</td>
+          <td class="text-center">
+            <div class="btn-group" role="group"></div>
+            <button
+              type="button"
+              class="btn btn-warning"
+              routerLink="/edit-payment/{{ membership.PAYMENT_ID }}"
+            >
+              Editar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="onDelete(membership.PAYMENT_ID, i)"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

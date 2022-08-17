@@ -1,0 +1,52 @@
+<app-main-header></app-main-header>
+<div class="container">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-1 mb-1 bo border-bottom"
+  >
+    <h2>Listado de Cuentas</h2>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Fecha Inicio</th>
+          <th scope="col">Fecha Final</th>
+          <th scope="col">Inversion</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Membresia ID</th>
+          <th scope="col">Cliente ID</th>
+          <th class="text-center" scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let clientAccount of ClientsAccounts; let i = index">
+          <td>{{ clientAccount.ACCOUNT_ID }}</td>
+          <td>{{ clientAccount.START_DATE }}</td>
+          <td>{{ clientAccount.END_DATE }}</td>
+          <td>{{ clientAccount.INVESTMENT }}</td>
+          <td>{{ clientAccount.STATUS }}</td>
+          <td>{{ clientAccount.MEMBERSHIP_ID }}</td>
+          <td>{{ clientAccount.CLIENT_ID }}</td>
+          <td class="text-center">
+            <div class="btn-group" role="group"></div>
+            <button
+              type="button"
+              class="btn btn-warning"
+              routerLink="/edit-client-account/{{ clientAccount.ACCOUNT_ID }}"
+            >
+              Editar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="onDelete(clientAccount.ACCOUNT_ID, i)"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

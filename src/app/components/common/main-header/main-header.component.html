@@ -1,0 +1,123 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">CENTRILAB</a>
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarColor01"
+      aria-controls="navbarColor01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >Clientes</a
+          >
+          <div class="dropdown-menu">
+            <a
+              class="dropdown-item"
+              routerLinkActive="active"
+              routerLink="/clients"
+              >Mostrar Cientes</a
+            >
+            <a
+              class="dropdown-item"
+              routerLinkActive="active"
+              routerLink="/add-client"
+              >Añadir Cliente</a
+            >
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >Cuentas</a
+          >
+          <div class="dropdown-menu">
+            <a
+              class="dropdown-item"
+              routerLinkActive="active"
+              routerLink="/client-accounts"
+              >Mostrar Cuentas</a
+            >
+            <a
+              class="dropdown-item"
+              routerLinkActive="active"
+              routerLink="/add-client-account"
+              >Añadir Cuenta</a
+            >
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >Pagos</a
+          >
+          <div class="dropdown-menu">
+            <a
+              class="dropdown-item"
+              routerLinkActive="active"
+              routerLink="/payments"
+              >Mostrar Pagos</a
+            >
+            <a
+              class="dropdown-item"
+              routerLinkActive="active"
+              routerLink="/add-payment"
+              >Añadir Pago</a
+            >
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >Membresias</a
+          >
+          <div class="dropdown-menu">
+            <a
+              class="dropdown-item"
+              routerLinkActive="active"
+              routerLink="/memberships"
+              >Mostrar Membresias</a
+            >
+            <a
+              class="dropdown-item"
+              routerLinkActive="active"
+              routerLink="/add-membership"
+              >Añadir Membresia</a
+            >
+          </div>
+        </li>
+      </ul>
+      <button
+        class="btn btn-secondary my-2 d-flex"
+        type="submit"
+        (click)="userService.logout()"
+      >
+        <div>Cerrar Sesión&nbsp;&nbsp; <i class="fas fa-sign-out-alt"></i></div>
+      </button>
+    </div>
+  </div>
+</nav>

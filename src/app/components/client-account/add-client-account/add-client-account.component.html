@@ -1,0 +1,92 @@
+<app-main-header></app-main-header>
+<div class="container">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-1 mb-1 bo border-bottom"
+  >
+    <h2>Agregar Cuenta</h2>
+  </div>
+
+  <form [formGroup]="clientAccountForm" (ngSubmit)="onSubmit()">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>ID</label>
+          <input
+            class="form-control"
+            type="number"
+            formControlName="account_id"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Fecha Inicio</label>
+          <input
+            class="form-control"
+            type="date"
+            formControlName="start_date"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Fecha Final</label>
+          <input
+            class="form-control"
+            type="date"
+            formControlName="end_date"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Inversion</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="investment"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Estado</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="status"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Membresia ID</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="membership_id"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Cliente ID</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="client_id"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <label class="col-12"></label>
+    <div class="form-group d-flex justify-content-center">
+      <button type="button" class="btn btn-success col-md-4" type="submit">
+        Agregar Cuenta
+      </button>
+    </div>
+  </form>
+</div>

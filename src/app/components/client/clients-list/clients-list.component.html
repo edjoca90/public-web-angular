@@ -1,0 +1,50 @@
+<app-main-header></app-main-header>
+<div class="container">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-1 mb-1 bo border-bottom"
+  >
+    <h2>Listado de Clientes</h2>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Documento</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Email</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Wallet</th>
+          <th class="text-center" scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of Clients; let i = index">
+          <td>{{ client.CLIENT_ID }}</td>
+          <td>{{ client.DOCUMENT_NUMBER }}</td>
+          <td>{{ client.NAME }}</td>
+          <td>{{ client.EMAIL }}</td>
+          <td>{{ client.PHONE }}</td>
+          <td>{{ client.WALLET }}</td>
+          <td class="text-center">
+            <div class="btn-group" role="group"></div>
+            <button
+              type="button"
+              class="btn btn-warning"
+              routerLink="/edit-client/{{ client.CLIENT_ID }}"
+            >
+              Editar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="onDelete(client.CLIENT_ID, i)"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

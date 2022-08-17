@@ -1,0 +1,62 @@
+<app-main-header></app-main-header>
+<div class="container">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-1 mb-1 bo border-bottom"
+  >
+    <h2>Editar Pago</h2>
+  </div>
+
+  <form [formGroup]="updatePaymentForm" (ngSubmit)="onUpdate()">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>ID</label>
+          <input
+            class="form-control"
+            type="number"
+            formControlName="payment_id"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Cuenta ID</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="account_id"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Fecha de pago</label>
+          <input
+            class="form-control"
+            type="date"
+            formControlName="payment_date"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Monto</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="ammount"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <label class="col-12"></label>
+    <div class="form-group d-flex justify-content-center">
+      <button type="button" class="btn btn-success col-md-4" type="submit">
+        Actualizar Pago
+      </button>
+    </div>
+  </form>
+</div>
